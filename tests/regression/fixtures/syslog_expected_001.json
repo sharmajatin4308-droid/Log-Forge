@@ -1,0 +1,71 @@
+{
+  "ocsf_event": {
+    "class_uid": 4001,
+    "class_name": "Network Activity",
+    "category_uid": 4,
+    "category_name": "Network Activity",
+    "activity_id": 3,
+    "activity_name": "Reset",
+    "type_uid": 400103,
+    "time": 1788265805000,
+    "severity_id": 3,
+    "severity": "Medium",
+    "src_endpoint": {
+      "ip": "10.0.0.4"
+    },
+    "dst_endpoint": {
+      "ip": "8.8.8.8",
+      "port": 53
+    },
+    "connection_info": {
+      "protocol_name": "UDP"
+    },
+    "action_id": 2,
+    "action": "Denied",
+    "disposition_id": 2,
+    "disposition": "Blocked",
+    "message": "Firewall dropped UDP packet",
+    "raw_data": "<134>Sep 01 12:30:05 fw01 action=deny src=10.0.0.4 dst=8.8.8.8 dpt=53 proto=UDP msg=\"Firewall dropped UDP packet\"",
+    "unmapped": {
+      "pri": 134
+    },
+    "metadata": {
+      "version": "1.4.0",
+      "product": {
+        "name": "LogForge",
+        "vendor_name": "Hacked",
+        "version": "1.0.0"
+      },
+      "log_name": "syslog",
+      "original_time": "Sep 01 12:30:05",
+      "uid": "fixture-static-uuid"
+    }
+  },
+  "ulpf_metadata": {
+    "raw_event_id": "fixture-static-uuid",
+    "extension_id": "syslog",
+    "extension_version": "1.0.0",
+    "mapping_profile_id": "syslog_generic",
+    "mapping_profile_version": "1.0",
+    "schema_version": "1.4.0",
+    "parse_status": "success",
+    "parse_errors": [],
+    "processed_at": "2026-09-01T12:00:00Z",
+    "processing_duration_ms": 0.5,
+    "source_hint_used": null,
+    "transport": "file"
+  },
+  "raw_event": {
+    "raw_event_id": "fixture-static-uuid",
+    "payload": "<134>Sep 01 12:30:05 fw01 action=deny src=10.0.0.4 dst=8.8.8.8 dpt=53 proto=UDP msg=\"Firewall dropped UDP packet\"",
+    "payload_encoding": "utf-8",
+    "ingestion": {
+      "source_id": "test",
+      "transport": "file",
+      "source_address": null,
+      "source_hint": null,
+      "received_at": "2026-09-01T12:00:00Z",
+      "ingestion_sequence": 0
+    }
+  }
+}

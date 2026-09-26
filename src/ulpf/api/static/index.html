@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LogForge — AI-Assisted Security Log Processing &amp; Normalization Framework</title>
+  <meta name="description" content="Universal Security Log Pre-processing &amp; Normalization Framework (ULPF) targeting OCSF 1.4.0 with deterministic format routing, zero-data-loss extraction, and SHA-256 integrity proof.">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg?v=1.7.0">
+  <link rel="alternate icon" type="image/png" href="/static/favicon.png?v=1.7.0">
+  <link rel="shortcut icon" href="/static/favicon.ico?v=1.7.0">
+  <link rel="apple-touch-icon" href="/static/favicon.png?v=1.7.0">
+  <link rel="stylesheet" href="/static/style.css?v=2.1.0">
+</head>
+<body>
+  <!-- Polite Live Region for Screen Reader Announcements -->
+  <div id="aria-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Main Application Shell (Floating Workstation Canvas) -->
+  <div class="app-shell">
+
+    <!-- Left Navigation Rail (Direct Reference Reproduction) -->
+    <aside class="app-sidebar" role="navigation" aria-label="Main LogForge Navigation">
+      <div class="sidebar-top">
+        <div class="sidebar-brand-mark" title="LogForge • OCSF 1.4.0" aria-label="LogForge Logo">LF</div>
+        <nav class="sidebar-nav-group" role="tablist" aria-label="Workspace Screens">
+          <button class="rail-tab-btn active" id="tab-btn-dashboard" role="tab" aria-selected="true" aria-controls="tab-dashboard" data-tab="dashboard" title="Dashboard">
+            <span class="rail-tab-icon" aria-hidden="true"></span>
+            <span class="sr-only">Dashboard</span>
+          </button>
+          <button class="rail-tab-btn" id="tab-btn-normalizer" role="tab" aria-selected="false" aria-controls="tab-normalizer" data-tab="normalizer" title="Interactive Normalizer">
+            <span class="rail-tab-icon" aria-hidden="true"></span>
+            <span class="sr-only">Interactive Normalizer</span>
+          </button>
+          <button class="rail-tab-btn" id="tab-btn-batch" role="tab" aria-selected="false" aria-controls="tab-batch" data-tab="batch" title="Batch Ingest">
+            <span class="rail-tab-icon" aria-hidden="true"></span>
+            <span class="sr-only">Batch Ingest</span>
+          </button>
+          <button class="rail-tab-btn" id="tab-btn-events" role="tab" aria-selected="false" aria-controls="tab-events" data-tab="events" title="Events Explorer">
+            <span class="rail-tab-icon" aria-hidden="true"></span>
+            <span class="sr-only">Events Explorer</span>
+          </button>
+          <button class="rail-tab-btn" id="tab-btn-extensions" role="tab" aria-selected="false" aria-controls="tab-extensions" data-tab="extensions" title="Extensions Registry">
+            <span class="rail-tab-icon" aria-hidden="true"></span>
+            <span class="sr-only">Extensions Registry</span>
+          </button>
+          <button class="rail-tab-btn" id="tab-btn-ai" role="tab" aria-selected="false" aria-controls="tab-ai" data-tab="ai" title="AI Onboarding (Concept Preview)">
+            <span class="rail-tab-icon" aria-hidden="true"></span>
+            <span class="rail-badge-dot" title="Concept Preview"></span>
+            <span class="sr-only">AI Onboarding</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="sidebar-bottom">
+        <button class="rail-tab-btn" id="rail-settings-btn" title="System Settings &amp; Diagnostics" aria-label="System Settings">
+          <span class="rail-tab-icon" id="rail-settings-icon" aria-hidden="true"></span>
+        </button>
+        <button class="rail-tab-btn" id="rail-refresh-all-btn" title="Refresh Live Telemetry" aria-label="Refresh Telemetry">
+          <span class="rail-tab-icon" id="rail-refresh-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Application Canvas Area -->
+    <div class="app-main-content">
+
+      <!-- Top Application Header (Lighter, Cleaner, Reference Aligned) -->
+      <header class="app-header">
+        <div class="brand-block">
+          <div class="brand-name-row">
+            <span class="brand-name">LogForge</span>
+            <span class="ocsf-badge">OCSF 1.4.0</span>
+          </div>
+          <span class="brand-descriptor">AI-Assisted Security Log Processing &amp; Normalization Framework</span>
+        </div>
+
+        <div class="header-right-controls">
+          <!-- Search / Filter Quick Trigger -->
+          <div class="header-search-bar" id="header-search-box" title="Quick Filter Events">
+            <span class="header-search-icon" aria-hidden="true"></span>
+            <input type="text" id="header-quick-search" placeholder="Search events, IP, or format..." aria-label="Quick search">
+          </div>
+
+          <!-- Live Health Indicator Widget -->
+          <div class="system-health-widget" id="health-widget" title="Backend health probe status">
+            <span class="health-dot" id="health-indicator-dot" aria-hidden="true"></span>
+            <span id="health-status-label">Connecting...</span>
+            <span class="health-details-summary" id="health-versions-summary"></span>
+          </div>
+
+          <!-- Operator Avatar Badge (Direct Reference Match) -->
+          <div class="operator-badge-wrapper" title="Security Operations Center (SOC) Operator">
+            <div class="operator-avatar" aria-hidden="true">
+              <span>SOC</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Workspace -->
+      <main class="workspace">
+        <!-- Screen 1: Dashboard (Default Active Screen per Reference) -->
+        <section id="tab-dashboard" class="tab-panel active" role="tabpanel" aria-labelledby="tab-btn-dashboard"></section>
+
+        <!-- Screen 2: Interactive Normalizer -->
+        <section id="tab-normalizer" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-normalizer"></section>
+
+        <!-- Screen 3: Batch Ingest -->
+        <section id="tab-batch" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-batch"></section>
+
+        <!-- Screen 4: Events Explorer -->
+        <section id="tab-events" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-events"></section>
+
+        <!-- Screen 5: Extensions Registry -->
+        <section id="tab-extensions" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-extensions"></section>
+
+        <!-- Screen 6: AI Onboarding Concept Preview -->
+        <section id="tab-ai" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-ai"></section>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Event Inspector Accessible Modal Overlay -->
+  <div class="modal-backdrop" id="inspector-modal-backdrop" role="dialog" aria-modal="true" aria-label="Event Forensic Inspector">
+    <div class="modal-container" id="inspector-modal-content"></div>
+  </div>
+
+  <!-- Clear Events Destructive Confirmation Modal Overlay -->
+  <div class="modal-backdrop" id="clear-events-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="clear-events-modal-title">
+    <div class="modal-container modal-container-sm" id="clear-events-modal-content"></div>
+  </div>
+
+  <!-- Application Entry Point (ES Module) -->
+  <script type="module" src="/static/app.js?v=1.8.0"></script>
+</body>
+</html>

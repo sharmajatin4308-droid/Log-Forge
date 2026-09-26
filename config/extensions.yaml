@@ -1,0 +1,25 @@
+extensions:
+  - id: cisco-asa
+    module: extensions.cisco_asa_ext.parser
+    class: CiscoASAExtension
+    enabled: true
+
+  - id: cef
+    module: extensions.cef_ext.parser
+    class: CEFExtension
+    enabled: true
+
+  - id: syslog
+    module: extensions.syslog_ext.parser
+    class: SyslogExtension
+    enabled: true
+
+  - id: json
+    module: extensions.json_ext.parser
+    class: JSONExtension
+    enabled: true
+
+  - id: generic
+    module: extensions.generic_ext.parser
+    class: GenericExtension
+    enabled: true

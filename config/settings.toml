@@ -1,0 +1,23 @@
+[pipeline]
+extensions_config = "config/extensions.yaml"
+mappings_dir = "config/mappings"
+output_dir = "output"
+output_format = "jsonl"
+max_output_file_size_mb = 100
+executor_type = "process"
+max_payload_bytes = 2097152
+max_in_flight_batches = 0
+
+[ingestion]
+default_transport = "file"
+
+[web]
+host = "127.0.0.1"
+port = 8000
+cors_origins = ["*"]
+
+[ai]
+enabled = false
+ollama_base_url = "http://localhost:11434"
+default_model = "llama3.1:8b"
+fallback_to_mock = true

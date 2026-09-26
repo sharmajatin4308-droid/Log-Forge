@@ -1,0 +1,44 @@
+profile_id: cef_standard
+profile_version: "1.0"
+format_id: cef
+vendor: null
+product: null
+
+timestamp:
+  source_field: rt
+  formats:
+    - "%b %d %Y %H:%M:%S %Z"
+    - "%Y-%m-%dT%H:%M:%S%z"
+
+field_mappings:
+  src: src_endpoint.ip
+  spt: src_endpoint.port
+  dst: dst_endpoint.ip
+  dpt: dst_endpoint.port
+  proto: connection_info.protocol_name
+  act: _action_raw
+  msg: message
+  dhost: dst_endpoint.hostname
+  shost: src_endpoint.hostname
+  Name: message
+  Severity: _cef_severity_raw   # CEF severity 0-10; mapped via activity_rules
+
+type_coercions:
+  dst_endpoint.port: int
+  src_endpoint.port: int
+
+activity_rules:
+  - condition_field: act
+    condition_values: [deny, block, drop, DENY, BLOCK]
+    activity_id: 3
+    action_id: 2
+    disposition_id: 2
+    severity_id: 3
+  - condition_field: act
+    condition_values: [allow, permit, ALLOW, pass]
+    activity_id: 6
+    action_id: 1
+    disposition_id: 1
+    severity_id: 1
+
+observer_log_name: cef

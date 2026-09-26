@@ -1,0 +1,21 @@
+Sep 01 12:30:05 fw01 %ASA-4-106001: Inbound TCP connection denied from 10.0.0.4/54321 to 8.8.8.8/53 flags SYN on interface outside
+Sep 01 12:31:10 fw01 %ASA-6-302013: Built inbound TCP connection 123456 for outside:192.168.1.5/12345 to inside:10.0.0.1/80
+Sep 01 12:32:00 fw01 %ASA-4-106001: Inbound UDP connection denied from 172.16.0.10/1024 to 8.8.4.4/53 on interface outside
+Sep 01 12:32:15 fw01 %ASA-4-106023: Deny tcp src outside:10.1.2.3/3389 dst inside:8.8.4.4/80 by access-group outside_in
+Sep 01 12:32:45 fw01 %ASA-6-302013: Built outbound TCP connection 987654 for inside:10.0.0.1/51234 to outside:1.1.1.1/443
+Sep 01 12:33:00 fw01 %ASA-4-106001: Inbound TCP connection denied from 172.16.1.10/55555 to 198.51.100.2/22 flags SYN on interface outside
+Sep 01 12:33:20 fw01 %ASA-6-302013: Built inbound TCP connection 112233 for outside:192.168.1.100/61234 to inside:10.0.0.5/8080
+Sep 01 12:33:55 fw01 %ASA-4-106001: Inbound UDP connection denied from 192.168.2.50/1025 to 1.1.1.1/53 on interface outside
+Sep 01 12:34:10 fw01 %ASA-6-302013: Built outbound TCP connection 445566 for inside:10.0.0.15/52110 to outside:172.217.16.206/443
+Sep 01 12:34:30 fw01 %ASA-4-106001: Inbound TCP connection denied from 10.5.0.22/49152 to 185.199.108.153/443 flags SYN on interface outside
+Sep 01 12:35:00 fw01 %ASA-6-302013: Built inbound TCP connection 778899 for outside:192.168.1.25/49200 to inside:10.0.0.2/3389
+Sep 01 12:35:15 fw01 %ASA-4-106001: Inbound UDP connection denied from 172.16.0.4/123 to 8.8.8.8/123 on interface outside
+Sep 01 12:35:40 fw01 %ASA-6-302013: Built outbound TCP connection 332211 for inside:10.0.0.50/44123 to outside:142.250.190.46/80
+Sep 01 12:36:00 fw01 %ASA-4-106001: Inbound TCP connection denied from 10.20.30.40/49200 to 203.0.113.50/445 flags SYN on interface outside
+Sep 01 12:36:20 fw01 %ASA-6-302013: Built inbound UDP connection 667788 for outside:192.168.1.88/58000 to inside:10.10.10.10/53
+Sep 01 12:36:50 fw01 %ASA-4-106001: Inbound TCP connection denied from 172.16.5.5/60000 to 192.0.2.1/23 flags SYN on interface outside
+Sep 01 12:37:10 fw01 %ASA-6-302013: Built outbound TCP connection 889900 for inside:10.0.1.2/51234 to outside:10.0.2.2/443
+Sep 01 12:37:35 fw01 %ASA-4-106001: Inbound TCP connection denied from 192.168.10.15/55112 to 8.8.8.8/853 flags SYN on interface outside
+Sep 01 12:38:00 fw01 %ASA-6-302013: Built outbound TCP connection 123789 for inside:10.0.0.8/49888 to outside:104.244.42.1/443
+Sep 01 12:38:25 fw01 %ASA-4-106001: Inbound TCP connection denied from 172.31.0.99/59000 to 198.51.100.80/8080 flags SYN on interface outside
+Sep 01 12:38:50 fw01 %ASA-4-106001: Inbound TCP connection denied from 192.168.1.12/52345 to 151.101.1.140/443 flags SYN on interface outside

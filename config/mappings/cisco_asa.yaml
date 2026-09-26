@@ -1,0 +1,41 @@
+profile_id: cisco_asa
+profile_version: "1.0"
+format_id: cisco_asa
+vendor: Cisco
+product: ASA
+
+timestamp:
+  source_field: timestamp_raw
+  formats:
+    - "%b %d %H:%M:%S"
+    - "%b  %d %H:%M:%S"
+
+field_mappings:
+  src: src_endpoint.ip
+  src_port: src_endpoint.port
+  dst: dst_endpoint.ip
+  dst_port: dst_endpoint.port
+  proto: connection_info.protocol_name
+  direction: connection_info.direction
+  action: _action_raw
+  asa_msgid: message
+
+type_coercions:
+  dst_endpoint.port: int
+  src_endpoint.port: int
+
+activity_rules:
+  - condition_field: action
+    condition_values: [deny, Deny, DENY, denied]
+    activity_id: 3          # Reset
+    action_id: 2            # Denied
+    disposition_id: 2       # Blocked
+    severity_id: 3          # Medium
+  - condition_field: action
+    condition_values: [allow, built, Built, permit]
+    activity_id: 1          # Open
+    action_id: 1            # Allowed
+    disposition_id: 1       # Allowed
+    severity_id: 1          # Informational
+
+observer_log_name: cisco_asa

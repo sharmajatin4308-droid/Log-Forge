@@ -1,0 +1,48 @@
+profile_id: json_generic
+profile_version: "1.0"
+format_id: json
+vendor: null
+product: null
+
+timestamp:
+  source_field: timestamp_raw
+  formats:
+    - "%Y-%m-%dT%H:%M:%S%z"
+    - "%Y-%m-%dT%H:%M:%SZ"
+    - "%Y-%m-%d %H:%M:%S"
+
+field_mappings:
+  src_ip: src_endpoint.ip
+  source_ip: src_endpoint.ip
+  sourceAddress: src_endpoint.ip
+  dst_ip: dst_endpoint.ip
+  destination_ip: dst_endpoint.ip
+  destinationAddress: dst_endpoint.ip
+  port: dst_endpoint.port
+  dst_port: dst_endpoint.port
+  protocol: connection_info.protocol_name
+  action: _action_raw
+  event_type: message
+  message: message
+  msg: message
+  severity: _severity_raw
+
+type_coercions:
+  dst_endpoint.port: int
+  src_endpoint.port: int
+
+activity_rules:
+  - condition_field: action
+    condition_values: [deny, block, drop, DENY, reject]
+    activity_id: 3
+    action_id: 2
+    disposition_id: 2
+    severity_id: 3
+  - condition_field: action
+    condition_values: [allow, permit, accept, pass, ALLOW]
+    activity_id: 6
+    action_id: 1
+    disposition_id: 1
+    severity_id: 1
+
+observer_log_name: json

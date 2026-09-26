@@ -1,0 +1,14 @@
+profile_id: generic_passthrough
+profile_version: "1.0"
+format_id: unknown
+vendor: null
+product: null
+
+timestamp:
+  source_field: timestamp_raw
+  formats: []
+
+field_mappings: {}
+type_coercions: {}
+activity_rules: []
+observer_log_name: unknown

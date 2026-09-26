@@ -1,0 +1,21 @@
+CEF:0|Cisco|ASA|9.8.1|106001|Deny inbound TCP|5|src=10.0.0.4 spt=54321 dst=8.8.8.8 dpt=53 proto=TCP act=deny rt=Sep 01 2024 12:30:05 UTC msg=Denied by ACL
+CEF:0|Fortinet|FortiGate|7.0|0001|Traffic Allowed|3|src=192.168.0.5 spt=49152 dst=10.0.0.1 dpt=443 proto=TCP act=allow rt=Sep 01 2024 12:30:05 UTC msg=Allowed session
+CEF:0|CheckPoint|VPN-1|R80.40|2002|Drop packet|6|src=10.1.2.3 spt=3389 dst=8.8.4.4 dpt=80 proto=TCP act=drop rt=Sep 01 2024 12:31:00 UTC msg=Policy violation
+CEF:0|PaloAlto|PAN-OS|10.1|THREAT|Threat Blocked|8|src=172.16.1.10 spt=55555 dst=198.51.100.2 dpt=22 proto=TCP act=block rt=Sep 01 2024 12:31:15 UTC msg=Brute force
+CEF:0|Cisco|Firepower|6.6|1001|Permit Web|2|src=192.168.1.100 spt=61234 dst=10.0.0.5 dpt=8080 proto=TCP act=permit rt=Sep 01 2024 12:31:30 UTC msg=Web browsing
+CEF:0|Juniper|SRX|21.4|FLOW|Traffic Deny|4|src=192.168.2.50 spt=1025 dst=1.1.1.1 dpt=53 proto=UDP act=deny rt=Sep 01 2024 12:32:00 UTC msg=DNS query blocked
+CEF:0|Fortinet|FortiGate|7.0|0002|Traffic Pass|1|src=10.0.0.15 spt=52110 dst=172.217.16.206 dpt=443 proto=TCP act=pass rt=Sep 01 2024 12:32:15 UTC msg=Outbound HTTPS
+CEF:0|Cisco|ASA|9.8.1|106002|Deny inbound UDP|5|src=172.16.0.4 spt=123 dst=8.8.8.8 dpt=123 proto=UDP act=deny rt=Sep 01 2024 12:32:30 UTC msg=NTP unauthorized
+CEF:0|CheckPoint|Firewall-1|R81|3001|Accept HTTP|2|src=10.0.0.50 spt=44123 dst=142.250.190.46 dpt=80 proto=TCP act=allow rt=Sep 01 2024 12:33:00 UTC msg=Web permitted
+CEF:0|PaloAlto|PAN-OS|10.1|TRAFFIC|SMB Denied|7|src=10.20.30.40 spt=49200 dst=203.0.113.50 dpt=445 proto=TCP act=deny rt=Sep 01 2024 12:33:15 UTC msg=SMB drop
+CEF:0|Cisco|ASA|9.8.1|302013|Built connection|3|src=192.168.1.88 spt=58000 dst=10.10.10.10 dpt=53 proto=UDP act=allow rt=Sep 01 2024 12:33:30 UTC msg=DNS build
+CEF:0|Juniper|SRX|21.4|FLOW|Telnet Rejected|6|src=172.16.5.5 spt=60000 dst=192.0.2.1 dpt=23 proto=TCP act=drop rt=Sep 01 2024 12:34:00 UTC msg=Insecure protocol
+CEF:0|Fortinet|FortiGate|7.0|0001|Allowed HTTPS|2|src=10.0.1.2 spt=51234 dst=10.0.2.2 dpt=443 proto=TCP act=permit rt=Sep 01 2024 12:34:15 UTC msg=VLAN routed
+CEF:0|Cisco|Firepower|6.6|2002|DoT Blocked|5|src=192.168.10.15 spt=55112 dst=8.8.8.8 dpt=853 proto=TCP act=block rt=Sep 01 2024 12:34:30 UTC msg=Encrypted DNS blocked
+CEF:0|CheckPoint|VPN-1|R80.40|1001|Allowed Social|1|src=10.0.0.8 spt=49888 dst=104.244.42.1 dpt=443 proto=TCP act=allow rt=Sep 01 2024 12:35:00 UTC msg=Social media
+CEF:0|PaloAlto|PAN-OS|10.1|TRAFFIC|Proxy Blocked|6|src=172.31.0.99 spt=59000 dst=198.51.100.80 dpt=8080 proto=TCP act=deny rt=Sep 01 2024 12:35:15 UTC msg=Proxy bypass
+CEF:0|Cisco|ASA|9.8.1|106001|Deny inbound TCP|5|src=192.168.1.12 spt=52345 dst=151.101.1.140 dpt=443 proto=TCP act=deny rt=Sep 01 2024 12:35:30 UTC msg=Content filtered
+CEF:0|Juniper|SRX|21.4|FLOW|Rogue DNS Denied|5|src=10.0.0.99 spt=61000 dst=8.8.4.4 dpt=53 proto=UDP act=drop rt=Sep 01 2024 12:36:00 UTC msg=DNS filtering
+CEF:0|Fortinet|FortiGate|7.0|0003|SSH Access Allowed|2|src=10.0.0.2 spt=45000 dst=192.168.1.1 dpt=22 proto=TCP act=allow rt=Sep 01 2024 12:36:15 UTC msg=Admin login
+CEF:0|CheckPoint|Firewall-1|R81|4002|Database Allowed|1|src=192.168.1.50 spt=53000 dst=10.0.0.20 dpt=5432 proto=TCP act=allow rt=Sep 01 2024 12:36:30 UTC msg=PostgreSQL query
+CEF:0|Cisco|ASA|9.8.1|106001|Deny inbound TCP|5|src=10.9.8.7 spt=59999 dst=8.8.8.8 dpt=443 proto=TCP act=deny rt=Sep 01 2024 12:37:00 UTC msg=Policy deny
