@@ -23,8 +23,8 @@
   --bronze-plate: #2B1D0C;          /* Elevated dark plates & buttons */
   --bronze-frame: #3E2B14;          /* Metal bevels & framing */
   --bronze-mid: #583E1A;            /* Directional metallic highlight */
-  --bronze-base: #8D6613;           /* Canonical Primary Bronze */
-  --bronze-bright: #A87C1E;         /* Burnished metallic luster */
+  --bronze-base: #75520A;           /* Canonical Primary Bronze (5.86:1 contrast on Pearl) */
+  --bronze-bright: #B58622;         /* Burnished metallic luster */
 
   /* Muted Antique Gold & Machined Brass (Scarce Accent / Hierarchy Anchor) */
   --brass-brightest: #FAF0D2;       /* Specular hairline catch */
@@ -42,43 +42,58 @@
   --pearl-vignette: #CBC1B2;        /* Restrained perimeter depth */
 
   /* Inscribed Ink on Pearl Surfaces (High Contrast, Authoritative) */
-  --ink-title: #191106;             /* Deepest bronze-charcoal (14:1 contrast) */
-  --ink-body: #3B2B19;              /* Core readable body text (9:1 contrast) */
-  --ink-muted: #665038;             /* Supporting labels & metadata (5.5:1 contrast) */
-  --ink-faint: #887258;             /* Dividers, watermarks, timestamps */
+  --ink-title: #191106;             /* Deepest bronze-charcoal (14.9:1 contrast) */
+  --ink-body: #2C1E10;              /* Core readable body text (13.3:1 contrast on Pearl) */
+  --ink-muted: #4E3924;             /* Supporting labels & metadata (8.9:1 contrast on Pearl) */
+  --ink-faint: #634E37;             /* Dividers, watermarks, timestamps (6.5:1 contrast on Pearl) */
 
   /* Typography on Dark Bronze / Leather Plates */
-  --text-dark-title: #FAF6F0;       /* High-emphasis embossed heading */
-  --text-dark-body: #EDE8E4;        /* Canonical Pearl readable text */
-  --text-dark-muted: #BAA996;       /* Subdued secondary information */
-  --text-dark-faint: #827260;       /* Faint technical labels */
+  --text-dark-title: #FAF6F0;       /* High-emphasis embossed heading (>18:1 contrast) */
+  --text-dark-body: #EDE8E4;        /* Canonical Pearl readable text (>16:1 contrast) */
+  --text-dark-muted: #D5C7B7;       /* Subdued secondary information (10:1 contrast on dark) */
+  --text-dark-faint: #A89885;       /* Faint technical labels (6:1 contrast on dark) */
 
   /* Semantic Security Jewel Status System (Clear, Restrained, Non-Glowing) */
-  --jewel-success: #1B6634;         /* Rich emerald jewel */
-  --jewel-success-bright: #27A852;  /* Status indicator light */
-  --jewel-success-bg: rgba(27, 102, 52, 0.09);
-  --jewel-success-border: rgba(27, 102, 52, 0.32);
+  --jewel-success: #155C2E;         /* Rich emerald jewel (6.4:1 contrast on Pearl) */
+  --jewel-success-bright: #2EC561;  /* Status indicator light (8.6:1 contrast on Dark) */
+  --jewel-success-bg: rgba(21, 92, 46, 0.13);
+  --jewel-success-border: rgba(21, 92, 46, 0.45);
 
-  --jewel-warning: #94530A;         /* Warm amber jewel */
-  --jewel-warning-bright: #DC821A;  /* Status indicator light */
-  --jewel-warning-bg: rgba(148, 83, 10, 0.09);
-  --jewel-warning-border: rgba(148, 83, 10, 0.32);
+  --jewel-warning: #804505;         /* Warm amber jewel (6.7:1 contrast on Pearl) */
+  --jewel-warning-bright: #F09424;  /* Status indicator light (8.1:1 contrast on Dark) */
+  --jewel-warning-bg: rgba(128, 69, 5, 0.13);
+  --jewel-warning-border: rgba(128, 69, 5, 0.45);
 
-  --jewel-error: #8C1C17;           /* Deep ruby jewel */
-  --jewel-error-bright: #D83630;    /* Status indicator light */
-  --jewel-error-bg: rgba(140, 28, 23, 0.09);
-  --jewel-error-border: rgba(140, 28, 23, 0.32);
+  --jewel-error: #8C1C17;           /* Deep ruby jewel (7.6:1 contrast on Pearl) */
+  --jewel-error-bright: #E8453F;    /* Status indicator light (5.3:1 contrast on Dark) */
+  --jewel-error-bg: rgba(140, 28, 23, 0.13);
+  --jewel-error-border: rgba(140, 28, 23, 0.45);
 
-  --jewel-info: #1F4E79;            /* Sapphire status jewel */
-  --jewel-info-bright: #3978BD;     /* Status indicator light */
-  --jewel-info-bg: rgba(31, 78, 121, 0.09);
-  --jewel-info-border: rgba(31, 78, 121, 0.32);
+  --jewel-info: #174268;            /* Sapphire status jewel (7.5:1 contrast on Pearl) */
+  --jewel-info-bright: #4A8CD6;     /* Status indicator light (5.8:1 contrast on Dark) */
+  --jewel-info-bg: rgba(23, 66, 104, 0.13);
+  --jewel-info-border: rgba(23, 66, 104, 0.45);
 
   /* Recessed Terminal Screen (Raw Stream, Codes, Hashes) */
   --terminal-bg: #0D0803;           /* Dark oxidized metal screen */
-  --terminal-bezel: #201509;        /* Screen bezel edge */
-  --terminal-text: #E8C174;         /* Warm phosphor gold-amber */
-  --terminal-sub: #9E835A;          /* Terminal secondary label */
+  --terminal-bezel: #362412;        /* Screen bezel edge */
+  --terminal-text: #E8C174;         /* Warm phosphor gold-amber (12:1 contrast) */
+  --terminal-sub: #BCA175;          /* Terminal secondary label (7.9:1 contrast) */
+  --terminal-placeholder: #9E886D;  /* Terminal placeholder (5.8:1 contrast) */
+
+  /* Compatibility & Semantic Aliases (High-Contrast Guaranteed) */
+  --palette-warm-orange: #75520A;
+  --palette-crimson-rose: #8C1C17;
+  --palette-soft-blush: #FAF0D2;
+  --glass-border: rgba(141, 102, 19, 0.28);
+  --color-text-primary: var(--ink-title);
+  --color-text-secondary: var(--ink-muted);
+  --color-text-muted: var(--ink-muted);
+  --color-status-success: var(--jewel-success);
+  --color-status-warning: var(--jewel-warning);
+  --color-status-error: var(--jewel-error);
+  --color-status-warning-bg: var(--jewel-warning-bg);
+  --color-status-warning-border: var(--jewel-warning-border);
 
   /* ========================================================================
      2. RESTRAINED PROCEDURAL TEXTURES (SUBTLE, CALM, LOW-FREQUENCY)
@@ -206,7 +221,7 @@ body {
   background:
     radial-gradient(circle at 10% 8%, rgba(141, 102, 19, 0.10) 0%, transparent 45%),
     linear-gradient(160deg, #24180A 0%, #1A1005 50%, #120A03 100%);
-  border: 1px solid rgba(197, 154, 63, 0.40);
+  border: 1px solid rgba(197, 154, 63, 0.55);
   border-top: 1.5px solid var(--brass-brightest);
   border-bottom: 2px solid #060401;
   border-radius: var(--radius-shell);
@@ -242,7 +257,7 @@ body {
   background:
     linear-gradient(90deg, rgba(0, 0, 0, 0.35) 0%, transparent 65%, rgba(0, 0, 0, 0.25) 100%),
     linear-gradient(180deg, #201407 0%, #160D04 50%, #100802 100%);
-  border-right: 1px solid rgba(197, 154, 63, 0.25);
+  border-right: 1px solid rgba(197, 154, 63, 0.40);
   box-shadow:
     inset -1px 0 0 rgba(0, 0, 0, 0.6),
     2px 0 8px rgba(0, 0, 0, 0.35);
@@ -318,10 +333,10 @@ body {
   border-radius: var(--radius-sm);
   background:
     linear-gradient(160deg, #241708 0%, #1A0F04 100%);
-  border: 1px solid rgba(141, 102, 19, 0.25);
+  border: 1px solid rgba(197, 154, 63, 0.38);
   border-top: 1px solid rgba(255, 240, 200, 0.15);
   border-bottom: 1px solid #0A0602;
-  color: #A69279;
+  color: #C8B69F;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -341,7 +356,7 @@ body {
 .rail-tab-btn:hover {
   background:
     linear-gradient(160deg, #35220C 0%, #221506 100%);
-  border-color: rgba(197, 154, 63, 0.5);
+  border-color: var(--brass-gold);
   color: var(--brass-brightest);
   transform: translateY(-1px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -414,7 +429,7 @@ body {
   padding: 16px 36px;
   background:
     linear-gradient(90deg, #221508 0%, #1B1005 50%, #150D04 100%);
-  border-bottom: 1px solid rgba(197, 154, 63, 0.25);
+  border-bottom: 1px solid rgba(197, 154, 63, 0.40);
   box-shadow:
     0 3px 10px rgba(0, 0, 0, 0.35),
     inset 0 1px 0 rgba(255, 245, 215, 0.1);
@@ -475,7 +490,7 @@ body {
   align-items: center;
   gap: 8px;
   background: #0E0904;
-  border: 1px solid rgba(141, 102, 19, 0.3);
+  border: 1px solid rgba(197, 154, 63, 0.45);
   border-top: 1.5px solid #060401;
   border-bottom: 1px solid rgba(255, 245, 215, 0.18);
   border-radius: var(--radius-pill);
@@ -513,7 +528,7 @@ body {
 }
 
 #header-quick-search::placeholder {
-  color: #7D6B56;
+  color: #A8957F;
 }
 
 /* Health Indicator Instrument */
@@ -524,7 +539,7 @@ body {
   padding: 5px 12px;
   border-radius: var(--radius-pill);
   background: #140C04;
-  border: 1px solid rgba(197, 154, 63, 0.25);
+  border: 1px solid rgba(197, 154, 63, 0.42);
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--text-dark-body);
@@ -637,9 +652,9 @@ body {
   background-image:
     linear-gradient(180deg, #FAF7F4 0%, #EDE8E4 35%, #E5DFD7 100%),
     var(--texture-pearl-fiber);
-  border: 1px solid rgba(141, 102, 19, 0.22);
+  border: 1px solid rgba(141, 102, 19, 0.34);
   border-top: 1px solid rgba(255, 255, 255, 0.95);
-  border-bottom: 1.5px solid #C4B9AA;
+  border-bottom: 1.5px solid #AD9F8C;
   border-radius: var(--radius-card);
   padding: 24px 26px;
   color: var(--ink-body);
@@ -654,7 +669,7 @@ body {
 .dash-card:hover,
 .glass-card:hover {
   transform: translateY(-1.5px);
-  border-color: rgba(197, 154, 63, 0.5);
+  border-color: var(--brass-gold);
   box-shadow: var(--shadow-pearl-card-hover);
 }
 
@@ -674,6 +689,30 @@ body {
   letter-spacing: -0.01em;
 }
 
+/* Universal Card Headings and Descriptions on Pearl / Ivory Surfaces */
+.dash-card h1,
+.dash-card h2,
+.dash-card h3,
+.dash-card h4,
+.glass-card h1,
+.glass-card h2,
+.glass-card h3,
+.glass-card h4,
+.section-header h3,
+.section-header h4,
+.batch-processing-workspace h3,
+.batch-processing-workspace h4 {
+  color: var(--ink-title) !important;
+}
+
+.dash-card .section-description,
+.glass-card .section-description,
+.modal-body .section-description,
+.batch-processing-workspace .section-description,
+#batch-progress-subtitle {
+  color: var(--ink-muted) !important;
+}
+
 .btn-text-link {
   background: transparent;
   border: none;
@@ -690,6 +729,7 @@ body {
 
 .btn-text-link:hover {
   color: var(--ink-title);
+  text-decoration: underline;
 }
 
 /* ==========================================================================
@@ -727,7 +767,7 @@ body {
   height: 26px;
   border-radius: var(--radius-xs);
   background: #F7F3EE;
-  border: 1px solid rgba(141, 102, 19, 0.25);
+  border: 1px solid rgba(141, 102, 19, 0.40);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -782,10 +822,10 @@ body {
   padding: 4px 12px;
   border-radius: var(--radius-pill);
   background: #E2DBD0;
-  border: 1px solid rgba(141, 102, 19, 0.25);
+  border: 1px solid rgba(141, 102, 19, 0.40);
   font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--ink-body);
+  font-weight: 700;
+  color: var(--ink-title);
   cursor: pointer;
   margin-bottom: 18px;
   transition: border-color var(--motion-fast);
@@ -812,7 +852,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border-top: 1px solid rgba(141, 102, 19, 0.18);
+  border-top: 1px solid rgba(141, 102, 19, 0.28);
   padding-top: 14px;
 }
 
@@ -849,7 +889,7 @@ body {
   border-radius: var(--radius-sm);
   background:
     linear-gradient(160deg, #32210D 0%, #201407 100%);
-  border: 1px solid rgba(197, 154, 63, 0.4);
+  border: 1px solid rgba(197, 154, 63, 0.55);
   border-top: 1.5px solid var(--brass-brightest);
   border-bottom: 1.5px solid #0C0702;
   display: flex;
@@ -873,8 +913,8 @@ body {
 
 .qa-button-label {
   font-size: 0.74rem;
-  font-weight: 600;
-  color: var(--ink-body);
+  font-weight: 700;
+  color: var(--ink-title);
 }
 
 .qa-action-button:hover .qa-button-label {
@@ -899,8 +939,8 @@ body {
   gap: 12px;
   padding: 9px 8px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.45);
-  border-bottom: 1px solid rgba(141, 102, 19, 0.12);
+  background: rgba(255, 255, 255, 0.65);
+  border-bottom: 1px solid rgba(141, 102, 19, 0.22);
   transition: background var(--motion-fast);
 }
 
@@ -985,8 +1025,8 @@ body {
   padding: 1px 5px;
   border-radius: var(--radius-xs);
   background: rgba(141, 102, 19, 0.12);
-  border: 1px solid rgba(141, 102, 19, 0.25);
-  color: var(--ink-body);
+  border: 1px solid rgba(141, 102, 19, 0.40);
+  color: var(--ink-title);
   letter-spacing: 0.3px;
 }
 
@@ -995,7 +1035,7 @@ body {
   height: 28px;
   border-radius: var(--radius-xs);
   background: #FAF7F2;
-  border: 1px solid rgba(141, 102, 19, 0.25);
+  border: 1px solid rgba(141, 102, 19, 0.40);
   color: var(--ink-body);
   display: flex;
   align-items: center;
@@ -1143,9 +1183,9 @@ body {
   font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--ink-body);
+  color: var(--ink-title);
   background: #FAF7F2;
-  border: 1px solid rgba(141, 102, 19, 0.3);
+  border: 1px solid rgba(141, 102, 19, 0.45);
   padding: 3px 11px;
   border-radius: var(--radius-pill);
   cursor: pointer;
@@ -1200,8 +1240,8 @@ body {
   width: 100%;
   border-radius: var(--radius-pill);
   overflow: hidden;
-  background: #D8D0C5;
-  border: 1px solid rgba(141, 102, 19, 0.25);
+  background: #CBC1B2;
+  border: 1px solid rgba(141, 102, 19, 0.40);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -1211,15 +1251,15 @@ body {
 }
 
 .spectrum-seg.seg-success {
-  background: #238848;
+  background: #1B7A3D;
 }
 
 .spectrum-seg.seg-partial {
-  background: #C47517;
+  background: #A85908;
 }
 
 .spectrum-seg.seg-failed {
-  background: #A8241D;
+  background: #B3221B;
 }
 
 /* Clean Telemetry Breakdown Cards */
@@ -1230,8 +1270,8 @@ body {
 }
 
 .severity-stat-card {
-  background: rgba(255, 255, 255, 0.55);
-  border: 1px solid rgba(141, 102, 19, 0.16);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(141, 102, 19, 0.28);
   border-radius: var(--radius-sm);
   padding: 8px 10px;
   display: flex;
@@ -1263,7 +1303,7 @@ body {
   font-family: var(--font-sans);
   font-size: 0.68rem;
   font-weight: 700;
-  color: var(--ink-body);
+  color: var(--ink-title);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -1308,8 +1348,8 @@ body {
   gap: 12px;
   padding: 9px 8px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.45);
-  border-bottom: 1px solid rgba(141, 102, 19, 0.12);
+  background: rgba(255, 255, 255, 0.65);
+  border-bottom: 1px solid rgba(141, 102, 19, 0.22);
   transition: background var(--motion-fast);
 }
 
@@ -1387,7 +1427,7 @@ body {
   align-items: center;
   gap: 10px;
   padding: 2px 0 10px 0;
-  border-bottom: 1px solid rgba(141, 102, 19, 0.18);
+  border-bottom: 1px solid rgba(141, 102, 19, 0.28);
 }
 
 .harness-parser-box,
@@ -1433,7 +1473,7 @@ body {
 /* Tactile Pill Button ("Cycle Preset") */
 .btn-chip-change {
   background: #FAF7F2;
-  border: 1px solid rgba(141, 102, 19, 0.3);
+  border: 1px solid rgba(141, 102, 19, 0.45);
   color: var(--ink-title);
   font-family: var(--font-sans);
   font-size: 0.74rem;
@@ -1476,7 +1516,7 @@ body {
   font-family: var(--font-sans);
   font-size: 0.68rem;
   font-weight: 700;
-  color: #BDB09E;
+  color: #D5C7B7;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1506,7 +1546,7 @@ body {
 }
 
 .harness-display-input::placeholder {
-  color: #6E5C46;
+  color: var(--terminal-placeholder);
 }
 
 /* Telemetry Row */
@@ -1515,8 +1555,8 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   padding: 8px 0;
-  border-top: 1px solid rgba(141, 102, 19, 0.16);
-  border-bottom: 1px solid rgba(141, 102, 19, 0.16);
+  border-top: 1px solid rgba(141, 102, 19, 0.28);
+  border-bottom: 1px solid rgba(141, 102, 19, 0.28);
 }
 
 .telemetry-cell {
@@ -1822,7 +1862,8 @@ body {
 }
 
 .btn:disabled {
-  opacity: 0.45;
+  opacity: 0.40;
+  filter: grayscale(35%);
   cursor: not-allowed;
   transform: none !important;
 }
@@ -1854,23 +1895,25 @@ body {
 /* Secondary Pearl Button */
 .btn-secondary {
   background: #FAF7F2;
-  border: 1px solid rgba(141, 102, 19, 0.28);
+  border: 1px solid rgba(141, 102, 19, 0.44);
   color: var(--ink-title);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
 .btn-secondary:hover:not(:disabled) {
   border-color: var(--brass-gold);
+  background: #FFFFFF;
   transform: translateY(-1px);
 }
 
 .btn-ghost {
   background: transparent;
-  color: var(--ink-body);
+  color: var(--ink-title);
+  font-weight: 700;
 }
 
 .btn-ghost:hover:not(:disabled) {
-  background: rgba(141, 102, 19, 0.1);
+  background: rgba(141, 102, 19, 0.18);
   color: var(--ink-title);
 }
 
@@ -1945,7 +1988,7 @@ body {
 }
 
 .form-textarea::placeholder {
-  color: #6E5C46;
+  color: var(--terminal-placeholder);
 }
 
 .form-textarea:focus {
@@ -1955,7 +1998,7 @@ body {
 
 .form-select, .form-input {
   background: #FAF7F2;
-  border: 1px solid rgba(141, 102, 19, 0.28);
+  border: 1px solid rgba(141, 102, 19, 0.44);
   border-radius: var(--radius-sm);
   padding: 6px 11px;
   color: var(--ink-title);
@@ -1978,18 +2021,19 @@ body {
 
 .preset-pill {
   background: #FAF7F2;
-  border: 1px solid rgba(141, 102, 19, 0.28);
-  color: var(--ink-body);
+  border: 1px solid rgba(141, 102, 19, 0.44);
+  color: var(--ink-title);
   border-radius: var(--radius-pill);
   padding: 3px 10px;
   font-size: 0.74rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: border-color var(--motion-fast);
 }
 
 .preset-pill:hover {
   border-color: var(--brass-gold);
+  background: #FFFFFF;
   color: var(--ink-title);
 }
 
@@ -2054,7 +2098,7 @@ body {
 }
 
 .lineage-table tr {
-  border-bottom: 1px solid rgba(141, 102, 19, 0.12);
+  border-bottom: 1px solid rgba(141, 102, 19, 0.24);
 }
 
 .lineage-key {
@@ -2098,17 +2142,17 @@ body {
 .unmapped-table th {
   text-align: left;
   padding: 7px 8px;
-  background: rgba(141, 102, 19, 0.08);
+  background: rgba(141, 102, 19, 0.16);
   color: var(--ink-title);
   font-size: 0.70rem;
   font-weight: 700;
   text-transform: uppercase;
-  border-bottom: 1px solid rgba(141, 102, 19, 0.2);
+  border-bottom: 1px solid rgba(141, 102, 19, 0.35);
 }
 
 .unmapped-table td {
   padding: 7px 8px;
-  border-bottom: 1px solid rgba(141, 102, 19, 0.1);
+  border-bottom: 1px solid rgba(141, 102, 19, 0.22);
   font-family: var(--font-mono);
   color: var(--ink-body);
 }
@@ -2121,8 +2165,8 @@ body {
 }
 
 .ocsf-field-item {
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(141, 102, 19, 0.16);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(141, 102, 19, 0.28);
   border-radius: var(--radius-sm);
   padding: 7px 9px;
 }
@@ -2184,11 +2228,11 @@ body {
 }
 
 .dropzone-container {
-  border: 1.5px dashed rgba(141, 102, 19, 0.45);
+  border: 1.5px dashed rgba(141, 102, 19, 0.65);
   border-radius: var(--radius-card);
   padding: 34px 24px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.45);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -2199,7 +2243,7 @@ body {
 
 .dropzone-container:hover, .dropzone-container.drag-over {
   border-color: var(--brass-gold);
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.75);
 }
 
 .dropzone-icon {
@@ -2232,11 +2276,11 @@ body {
 }
 
 .dash-badge-chip.pill-subtle {
-  background: rgba(141, 102, 19, 0.1);
-  border: 1px solid rgba(141, 102, 19, 0.25);
-  color: var(--ink-body);
+  background: rgba(141, 102, 19, 0.12);
+  border: 1px solid rgba(141, 102, 19, 0.42);
+  color: var(--ink-title);
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 2px 8px;
   border-radius: var(--radius-pill);
 }
@@ -2246,7 +2290,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
-  border-bottom: 1px solid rgba(141, 102, 19, 0.15);
+  border-bottom: 1px solid rgba(141, 102, 19, 0.28);
   padding-bottom: 8px;
 }
 
@@ -2280,15 +2324,15 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 7px 10px;
-  background: rgba(255, 255, 255, 0.45);
-  border: 1px solid rgba(141, 102, 19, 0.12);
+  background: rgba(255, 255, 255, 0.70);
+  border: 1px solid rgba(141, 102, 19, 0.25);
   border-radius: var(--radius-sm);
 }
 
 .dash-spec-label {
   color: var(--ink-muted);
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .dash-spec-value.mono {
@@ -2302,14 +2346,14 @@ body {
   color: var(--ink-body);
   font-size: 0.78rem;
   line-height: 1.5;
-  border-top: 1px solid rgba(141, 102, 19, 0.12);
+  border-top: 1px solid rgba(141, 102, 19, 0.25);
   padding-top: 10px;
 }
 
 .progress-track {
   width: 100%;
   height: 6px;
-  background: #D4CBC0;
+  background: #C4B9AA;
   border-radius: var(--radius-pill);
   overflow: hidden;
   margin: var(--space-3) 0;
@@ -2317,7 +2361,7 @@ body {
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #8D6613, #C59A3F);
+  background: linear-gradient(90deg, #75520A, #C59A3F);
   border-radius: var(--radius-pill);
   width: 0%;
   transition: width 180ms ease-out;
@@ -2330,7 +2374,7 @@ body {
   width: 100%;
   overflow-x: auto;
   border-radius: var(--radius-card);
-  border: 1px solid rgba(141, 102, 19, 0.22);
+  border: 1px solid rgba(141, 102, 19, 0.35);
   background-color: var(--pearl-surface);
   box-shadow: var(--shadow-pearl-card);
 }
@@ -2344,24 +2388,24 @@ body {
 
 .data-table thead th {
   padding: 11px 14px;
-  background: #F4EFEB;
+  background: #EFE9E3;
   color: var(--ink-title);
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border-bottom: 1px solid rgba(141, 102, 19, 0.2);
+  border-bottom: 1px solid rgba(141, 102, 19, 0.35);
   white-space: nowrap;
 }
 
 .data-table tbody tr {
-  border-bottom: 1px solid rgba(141, 102, 19, 0.1);
+  border-bottom: 1px solid rgba(141, 102, 19, 0.22);
   transition: background-color var(--motion-fast);
 }
 
 .data-table tbody tr:hover {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 .data-table td {
@@ -2425,7 +2469,7 @@ body {
 .events-maintenance-card {
   margin-top: var(--space-4);
   background-color: var(--pearl-surface);
-  border: 1px solid rgba(141, 102, 19, 0.22);
+  border: 1px solid rgba(141, 102, 19, 0.35);
   border-radius: var(--radius-card);
   padding: 12px 18px;
   display: flex;
@@ -2472,7 +2516,7 @@ body {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   background: var(--terminal-bg);
-  border: 1px solid rgba(141, 102, 19, 0.25);
+  border: 1px solid rgba(141, 102, 19, 0.40);
   padding: 2px 6px;
   border-radius: var(--radius-xs);
   color: var(--terminal-text);
@@ -2489,7 +2533,7 @@ body {
 
 .extension-card {
   background-color: var(--pearl-surface);
-  border: 1px solid rgba(141, 102, 19, 0.22);
+  border: 1px solid rgba(141, 102, 19, 0.35);
   border-radius: var(--radius-card);
   padding: 20px;
   display: flex;
@@ -2530,8 +2574,8 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6px;
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(141, 102, 19, 0.14);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(141, 102, 19, 0.28);
   padding: 8px 10px;
   border-radius: var(--radius-sm);
   font-size: 0.74rem;
@@ -2661,7 +2705,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 16px 22px;
-  border-bottom: 1px solid rgba(141, 102, 19, 0.2);
+  border-bottom: 1px solid rgba(141, 102, 19, 0.34);
   background: #F4EFEB;
 }
 
@@ -2689,7 +2733,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 12px 22px;
-  border-top: 1px solid rgba(141, 102, 19, 0.16);
+  border-top: 1px solid rgba(141, 102, 19, 0.30);
   background: #F7F3EE;
 }
 

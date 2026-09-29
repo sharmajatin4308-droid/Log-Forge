@@ -449,7 +449,7 @@ export async function loadDashboardData() {
   } catch (err) {
     console.error('Failed to load dashboard metrics:', err);
     if (feedList) {
-      feedList.innerHTML = `<div class="feed-empty-note" style="color: var(--palette-crimson-rose);">${getIcon('warning')} Telemetry error: ${err.message}</div>`;
+      feedList.innerHTML = `<div class="feed-empty-note" style="color: var(--jewel-error);">${getIcon('warning')} Telemetry error: ${err.message}</div>`;
     }
   }
 }

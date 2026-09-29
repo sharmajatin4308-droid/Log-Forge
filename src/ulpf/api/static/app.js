@@ -135,7 +135,7 @@ async function checkHealth() {
     if (dot) dot.className = 'health-dot online';
     if (label) label.textContent = 'Engine Online';
     if (versions) versions.textContent = `v${health.version || '1.0.0'} • OCSF ${health.ocsf_version || '1.4.0'}`;
-    if (railSettingsDot) railSettingsDot.style.color = 'var(--color-status-success)';
+    if (railSettingsDot) railSettingsDot.style.color = 'var(--jewel-success-bright)';
   } catch (err) {
     console.warn('Backend health check failed:', err);
     state.backendOnline = false;
@@ -144,7 +144,7 @@ async function checkHealth() {
     if (dot) dot.className = 'health-dot';
     if (label) label.textContent = 'Backend Offline';
     if (versions) versions.textContent = 'Disconnected';
-    if (railSettingsDot) railSettingsDot.style.color = 'var(--palette-crimson-rose)';
+    if (railSettingsDot) railSettingsDot.style.color = 'var(--jewel-error-bright)';
   }
 }
 

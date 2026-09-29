@@ -79,7 +79,7 @@ export async function loadExtensionsCatalog() {
     console.error('Failed to load extensions:', err);
     grid.innerHTML = `<div class="error-alert-box" style="grid-column: 1 / -1;">
       <div class="error-alert-title">${getIcon('warning')} Unable to load extensions catalog</div>
-      <p style="color: #ffaab8; font-size: 0.86rem;">${err.message}</p>
+      <p style="color: var(--jewel-error); font-size: 0.86rem;">${err.message}</p>
     </div>`;
   }
 }
@@ -119,7 +119,7 @@ function renderExtensionCards(grid, extensions) {
 
     items.forEach(it => {
       const row = createSafeElement('div');
-      row.innerHTML = `<span style="color: var(--color-text-muted);">${it.k}:</span> <strong style="color: var(--palette-soft-blush);">${it.v}</strong>`;
+      row.innerHTML = `<span style="color: var(--ink-muted);">${it.k}:</span> <strong style="color: var(--ink-title);">${it.v}</strong>`;
       metaGrid.appendChild(row);
     });
 

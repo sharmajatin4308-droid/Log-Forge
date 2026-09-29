@@ -198,7 +198,7 @@ function handleFileSelected(file) {
 
   const headerRow = createSafeElement('div', '', 'dash-card-header');
   const titleGroup = createSafeElement('div', '', '', { style: 'display: flex; align-items: center; gap: 14px;' });
-  const fileIcon = createSafeElement('div', '', '', { style: 'color: var(--palette-warm-orange); font-size: 1.4rem;' });
+  const fileIcon = createSafeElement('div', '', '', { style: 'color: var(--bronze-base); font-size: 1.4rem;' });
   fileIcon.innerHTML = getIcon('file');
 
   const fileTitleDetails = createSafeElement('div');
@@ -233,9 +233,9 @@ function handleFileSelected(file) {
     const warnBox = createSafeElement('div', '', 'error-alert-box', {
       style: 'margin-top: 14px; background: var(--color-status-warning-bg); border-color: var(--color-status-warning-border);'
     });
-    const warnTitle = createSafeElement('div', '', 'error-alert-title', { style: 'color: var(--palette-warm-orange);' });
+    const warnTitle = createSafeElement('div', '', 'error-alert-title', { style: 'color: var(--jewel-warning);' });
     warnTitle.innerHTML = `${getIcon('warning')} Large File Advisory`;
-    const warnText = createSafeElement('p', warningMessage, 'section-description', { style: 'color: #ffd0a8;' });
+    const warnText = createSafeElement('p', warningMessage, 'section-description', { style: 'color: var(--jewel-warning);' });
     warnBox.append(warnTitle, warnText);
     metaCard.appendChild(warnBox);
   }
@@ -350,8 +350,8 @@ function renderProgressCardUI(container) {
   container.innerHTML = `
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 12px;">
       <div>
-        <h3 style="font-size: 1.15rem; font-weight: 700; color: #ffffff;">Streaming Batch Execution</h3>
-        <p id="batch-progress-subtitle" class="section-description">Transmitting chunks sequentially to /api/ingest/batch...</p>
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #191106 !important;">Streaming Batch Execution</h3>
+        <p id="batch-progress-subtitle" class="section-description" style="color: #4E3924 !important;">Transmitting chunks sequentially to /api/ingest/batch...</p>
       </div>
       <button id="btn-cancel-batch" class="btn btn-danger btn-sm" type="button">Halt Ingestion</button>
     </div>
@@ -368,22 +368,22 @@ function renderProgressCardUI(container) {
       </div>
       <div class="dash-tile-card tile-success">
         <div class="dash-card-label">Success Rate</div>
-        <div class="dash-tile-value" id="batch-stat-success" style="font-size: 1.7rem; color: var(--color-status-success);">0</div>
+        <div class="dash-tile-value" id="batch-stat-success" style="font-size: 1.7rem; color: var(--jewel-success);">0</div>
         <div class="dash-tile-sub" id="batch-stat-rate">100% Normalized</div>
       </div>
       <div class="dash-tile-card tile-warning">
         <div class="dash-card-label">Partial / Fallback</div>
-        <div class="dash-tile-value" id="batch-stat-partial" style="font-size: 1.7rem; color: var(--palette-warm-orange);">0</div>
+        <div class="dash-tile-value" id="batch-stat-partial" style="font-size: 1.7rem; color: var(--jewel-warning);">0</div>
         <div class="dash-tile-sub">Unmapped fields</div>
       </div>
       <div class="dash-tile-card tile-warning">
         <div class="dash-card-label">Failed</div>
-        <div class="dash-tile-value" id="batch-stat-failed" style="font-size: 1.7rem; color: var(--palette-crimson-rose);">0</div>
+        <div class="dash-tile-value" id="batch-stat-failed" style="font-size: 1.7rem; color: var(--jewel-error);">0</div>
         <div class="dash-tile-sub">Parse errors</div>
       </div>
       <div class="dash-tile-card">
         <div class="dash-card-label">Wall-Clock EPS</div>
-        <div class="dash-tile-value" id="batch-stat-wall-eps" style="font-size: 1.7rem; color: var(--palette-warm-orange);">0</div>
+        <div class="dash-tile-value" id="batch-stat-wall-eps" style="font-size: 1.7rem; color: var(--ink-title);">0</div>
         <div class="dash-tile-sub" id="batch-stat-elapsed">0.0s elapsed</div>
       </div>
       <div class="dash-tile-card">
@@ -460,11 +460,13 @@ function renderCompletionCard() {
   const header = createSafeElement('div', '', 'section-header', { style: 'margin-bottom: 18px;' });
   const titleGroup = createSafeElement('div');
   const title = createSafeElement('h3', isCancelled ? 'Batch Ingestion Halted' : 'Batch Normalization Complete', '', {
-    style: 'font-size: 1.3rem; font-weight: 700; color: #ffffff;'
+    style: 'font-size: 1.3rem; font-weight: 700; color: #191106 !important;'
   });
   const sub = createSafeElement('p', isCancelled
     ? `Processing was halted. Partial results have been committed to output/events.jsonl.`
-    : `Processed ${stats.total.toLocaleString()} log lines in ${elapsedSec.toFixed(2)} seconds. All records committed to storage.`, 'section-description');
+    : `Processed ${stats.total.toLocaleString()} log lines in ${elapsedSec.toFixed(2)} seconds. All records committed to storage.`, 'section-description', {
+    style: 'color: #4E3924 !important;'
+  });
   titleGroup.append(title, sub);
 
   const actions = createSafeElement('div', '', 'section-actions');

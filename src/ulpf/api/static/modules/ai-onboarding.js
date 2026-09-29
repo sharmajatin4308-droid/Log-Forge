@@ -72,14 +72,14 @@ function renderAiShell(container) {
 
   // Prominent Disclaimer Banner
   const banner = createSafeElement('div', '', 'concept-preview-banner');
-  const bannerIcon = createSafeElement('div', '', '', { style: 'color: var(--palette-warm-orange); margin-top: 2px;' });
+  const bannerIcon = createSafeElement('div', '', '', { style: 'color: var(--brass-light); margin-top: 2px;' });
   bannerIcon.innerHTML = getIcon('warning');
 
   const bannerText = createSafeElement('div');
   const bannerHead = createSafeElement('div', '', '', { style: 'font-weight: 700; font-size: 0.95rem; margin-bottom: 4px;' });
   bannerHead.innerHTML = `<span class="concept-badge">Concept Preview</span> Architectural Simulation`;
   const bannerBody = createSafeElement('div', 'This screen illustrates LogForge\'s planned capability for air-gapped LLM parser synthesis (configured in settings.toml via local Ollama). No live generation API is invoked in this build; the demonstration executes a client-side simulation.', '', {
-    style: 'font-size: 0.84rem; line-height: 1.5; color: #ffd6b8;'
+    style: 'font-size: 0.84rem; line-height: 1.5; color: var(--text-dark-body);'
   });
   bannerText.append(bannerHead, bannerBody);
   banner.append(bannerIcon, bannerText);
@@ -87,11 +87,11 @@ function renderAiShell(container) {
   // Interactive Simulation Card
   const simCard = createSafeElement('div', '', 'glass-card');
   const simHeader = createSafeElement('div', '', 'section-header', { style: 'margin-bottom: 12px;' });
-  const simTitle = createSafeElement('h3', 'Unseen Log Sample (pfSense Filterlog)', '', { style: 'font-size: 1.05rem; font-weight: 700;' });
+  const simTitle = createSafeElement('h3', 'Unseen Log Sample (pfSense Filterlog)', '', { style: 'font-size: 1.05rem; font-weight: 700; color: #191106 !important;' });
   simHeader.appendChild(simTitle);
 
   const samplePre = createSafeElement('pre', 'Sep  1 12:30:05 pfSense filterlog[1234]: 4,,,1000000103,em0,match,block,in,4,0x0,,127,12345,0,DF,6,tcp,60,10.0.0.4,8.8.8.8,54321,53,0,S', 'code-surface', {
-    style: 'color: var(--palette-soft-blush); margin-bottom: 16px;'
+    style: 'color: var(--terminal-text); margin-bottom: 16px;'
   });
 
   const btnRow = createSafeElement('div', '', '', { style: 'display: flex; gap: 12px; align-items: center;' });
@@ -107,12 +107,12 @@ function renderAiShell(container) {
   // Result Area (Initially Hidden)
   const resultArea = createSafeElement('div', '', '', {
     id: 'ai-sim-result',
-    style: 'display: none; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--glass-border);'
+    style: 'display: none; margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(141, 102, 19, 0.28);'
   });
 
   const resHeader = createSafeElement('div', '', 'section-header', { style: 'margin-bottom: 12px;' });
   const resTitle = createSafeElement('h3', 'Synthesized MappingProfile Specification (YAML)', '', {
-    style: 'font-size: 1.05rem; font-weight: 700; color: #ffffff;'
+    style: 'font-size: 1.05rem; font-weight: 700; color: #191106 !important;'
   });
   const copyYamlBtn = createSafeElement('button', 'Copy YAML Specification', 'btn btn-secondary btn-sm', { type: 'button' });
   copyYamlBtn.innerHTML = `${getIcon('copy')} Copy YAML`;
@@ -120,7 +120,7 @@ function renderAiShell(container) {
   resHeader.append(resTitle, copyYamlBtn);
 
   const yamlPre = createSafeElement('pre', DEMO_YAML_PROFILE, 'code-surface', {
-    style: 'max-height: 400px; overflow-y: auto; color: var(--palette-soft-blush); line-height: 1.55;'
+    style: 'max-height: 400px; overflow-y: auto; color: var(--terminal-text); line-height: 1.55;'
   });
 
   resultArea.append(resHeader, yamlPre);

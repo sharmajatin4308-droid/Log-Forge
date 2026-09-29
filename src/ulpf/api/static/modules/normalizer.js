@@ -264,7 +264,7 @@ function renderResult(record) {
 
   const headerRight = createSafeElement('div', '', '', { style: 'display: flex; align-items: center; gap: 16px;' });
   const latencyBadge = createSafeElement('div', '', '', {
-    style: 'display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--palette-warm-orange);'
+    style: 'display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--bronze-base);'
   });
   latencyBadge.innerHTML = `${getIcon('clock')} ${(meta.processing_duration_ms || 0).toFixed(2)} ms latency`;
 
@@ -330,7 +330,7 @@ function renderResult(record) {
 
   // Integrity section within left column
   const integrityBlock = createSafeElement('div', '', '', {
-    style: 'margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--glass-border);'
+    style: 'margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(141, 102, 19, 0.28);'
   });
   const integrityTitle = createSafeElement('div', '', 'form-label', { style: 'margin-bottom: 8px; display: flex; align-items: center; gap: 6px;' });
   integrityTitle.innerHTML = `${getIcon('shield')} SHA-256 Payload Hash (Chain of Custody)`;
@@ -351,7 +351,7 @@ function renderResult(record) {
   // Unmapped Fields Card (Zero data loss proof)
   const unmappedCard = createSafeElement('div', '', 'glass-card');
   const unmappedHeader = createSafeElement('div', '', 'section-header', { style: 'margin-bottom: 12px;' });
-  const unmappedTitle = createSafeElement('h3', 'Unmapped Vendor Fields', '', { style: 'font-size: 1.05rem; font-weight: 700;' });
+  const unmappedTitle = createSafeElement('h3', 'Unmapped Vendor Fields', '', { style: 'font-size: 1.05rem; font-weight: 700; color: #191106 !important;' });
   unmappedHeader.appendChild(unmappedTitle);
 
   const unmapped = ocsf.unmapped || {};
@@ -359,7 +359,7 @@ function renderResult(record) {
 
   if (unmappedKeys.length === 0) {
     const emptyNote = createSafeElement('p', 'No unmapped fields. All extracted vendor attributes mapped directly into standard OCSF attributes.', 'section-description', {
-      style: 'font-style: italic; color: var(--palette-soft-blush);'
+      style: 'font-style: italic; color: var(--ink-muted);'
     });
     unmappedCard.append(unmappedHeader, emptyNote);
   } else {
@@ -441,7 +441,7 @@ function renderResult(record) {
   // 4. Immutable Raw Event Preservation Block (Ground Truth)
   const rawCard = createSafeElement('div', '', 'glass-card', { style: 'margin-top: 20px;' });
   const rawHeader = createSafeElement('div', '', 'section-header', { style: 'margin-bottom: 12px;' });
-  const rawTitle = createSafeElement('h3', '', '', { style: 'font-size: 1.05rem; font-weight: 700;' });
+  const rawTitle = createSafeElement('h3', '', '', { style: 'font-size: 1.05rem; font-weight: 700; color: #191106 !important;' });
   rawTitle.innerHTML = `${getIcon('terminal')} Immutable Raw Log Event (Character-for-Character Ground Truth)`;
 
   const copyRawBtn = createSafeElement('button', 'Copy Raw Payload', 'btn btn-secondary btn-sm', { type: 'button' });
@@ -453,7 +453,7 @@ function renderResult(record) {
   rawHeader.append(rawTitle, copyRawBtn);
 
   const rawPre = createSafeElement('pre', raw.payload || '', 'code-surface', {
-    style: 'max-height: 180px; overflow-y: auto; color: var(--palette-soft-blush);'
+    style: 'max-height: 180px; overflow-y: auto; color: var(--terminal-text);'
   });
 
   rawCard.append(rawHeader, rawPre);

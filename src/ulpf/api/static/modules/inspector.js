@@ -58,7 +58,7 @@ export async function openInspector(rawEventId, triggerElement = null, existingR
   modalContainer.innerHTML = `
     <div style="padding: 40px; text-align: center; color: var(--color-text-secondary);">
       <div class="skeleton" style="width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 16px auto;"></div>
-      <p style="font-size: 0.95rem;">Retrieving forensic record for <span style="font-family: var(--font-mono); color: var(--palette-soft-blush);">${rawEventId}</span>...</p>
+      <p style="font-size: 0.95rem;">Retrieving forensic record for <span style="font-family: var(--font-mono); color: var(--ink-title);">${rawEventId}</span>...</p>
     </div>
   `;
 
@@ -89,11 +89,11 @@ function renderInspectorError(container, err, rawEventId) {
   container.innerHTML = '';
 
   const errBox = createSafeElement('div', '', 'glass-card', { style: 'margin: 20px; text-align: center; padding: 40px 20px;' });
-  const icon = createSafeElement('div', '', '', { style: 'color: var(--palette-crimson-rose); margin-bottom: 14px;' });
+  const icon = createSafeElement('div', '', '', { style: 'color: var(--jewel-error); margin-bottom: 14px;' });
   icon.innerHTML = getIcon('failed');
 
   const title = createSafeElement('h3', err.status === 404 ? 'Event Not Found' : 'Unable to Retrieve Event', '', {
-    style: 'font-size: 1.2rem; color: #ffffff; margin-bottom: 8px;'
+    style: 'font-size: 1.2rem; color: var(--ink-title); margin-bottom: 8px;'
   });
 
   const msg = createSafeElement('p', err.status === 404
@@ -167,7 +167,7 @@ function renderInspectorContent(container, record) {
 
   // 1. Normalized OCSF Key Attributes Grid
   const ocsfSectionTitle = createSafeElement('h4', 'OCSF 1.4.0 Normalization (Class 4001 Network Activity)', 'form-label', {
-    style: 'margin-bottom: 10px; color: var(--palette-warm-orange);'
+    style: 'margin-bottom: 10px; color: var(--bronze-base);'
   });
   body.appendChild(ocsfSectionTitle);
 
@@ -192,7 +192,7 @@ function renderInspectorContent(container, record) {
 
   // 2. Lineage & Provenance
   const lineageTitle = createSafeElement('h4', 'Processing Lineage & Provenance', 'form-label', {
-    style: 'margin-top: 18px; margin-bottom: 10px; color: var(--palette-warm-orange);'
+    style: 'margin-top: 18px; margin-bottom: 10px; color: var(--bronze-base);'
   });
   body.appendChild(lineageTitle);
 
@@ -226,7 +226,7 @@ function renderInspectorContent(container, record) {
 
   // 3. Cryptographic Integrity Hash
   const hashBox = createSafeElement('div', '', '', {
-    style: 'margin-top: 16px; padding: 12px 14px; background: rgba(24, 21, 46, 0.6); border: 1px solid var(--glass-border); border-radius: var(--radius-sm);'
+    style: 'margin-top: 16px; padding: 12px 14px; background: var(--surface-plate); border: 1px solid rgba(141, 102, 19, 0.28); border-radius: var(--radius-sm);'
   });
   const hashLabel = createSafeElement('div', '', 'form-label', { style: 'margin-bottom: 6px; display: flex; align-items: center; gap: 6px;' });
   hashLabel.innerHTML = `${getIcon('shield')} SHA-256 Payload Hash (Forensic Authenticity)`;
@@ -246,7 +246,7 @@ function renderInspectorContent(container, record) {
     style: 'margin-top: 18px; margin-bottom: 8px;'
   });
   const rawPre = createSafeElement('pre', raw.payload || '', 'code-surface', {
-    style: 'max-height: 140px; overflow-y: auto; color: var(--palette-soft-blush);'
+    style: 'max-height: 140px; overflow-y: auto; color: var(--terminal-text);'
   });
   body.append(rawTitle, rawPre);
 

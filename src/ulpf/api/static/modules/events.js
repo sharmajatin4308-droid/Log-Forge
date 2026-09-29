@@ -280,7 +280,7 @@ function openClearConfirmationModal() {
   const header = createSafeElement('div', '', 'modal-header');
   const titleGroup = createSafeElement('div', '', 'modal-title-group');
   const h3 = createSafeElement('h3', 'Clear Stored Events Stream', '', { id: 'clear-events-modal-title' });
-  h3.style.color = 'var(--palette-crimson-rose)';
+  h3.style.color = 'var(--jewel-error)';
   const summaryLine = createSafeElement('div', 'Irreversible Local Storage Cleanup', 'modal-summary-line');
   titleGroup.append(h3, summaryLine);
 
@@ -299,13 +299,12 @@ function openClearConfirmationModal() {
   const dangerBox = createSafeElement('div', '', 'error-alert-box', { style: 'margin-bottom: 18px;' });
   const dangerTitle = createSafeElement('div', '', 'error-alert-title');
   dangerTitle.innerHTML = `${getIcon('warning')} Permanent Deletion Warning`;
-  const dangerDesc = createSafeElement('p', '', '', { style: 'font-size: 0.86rem; color: #ffb3c0; margin: 4px 0 0 0; line-height: 1.55;' });
+  const dangerDesc = createSafeElement('p', '', '', { style: 'font-size: 0.86rem; color: var(--jewel-error); margin: 4px 0 0 0; line-height: 1.55;' });
   dangerDesc.innerHTML = `This operation will permanently purge all <strong>${total.toLocaleString()}</strong> events from your local LogForge event stream (<code>output/events.jsonl</code>).`;
   dangerBox.append(dangerTitle, dangerDesc);
 
-  // Explanation notes
   const explainList = createSafeElement('ul', '', 'danger-modal-list', {
-    style: 'margin-bottom: 20px; padding-left: 20px; font-size: 0.84rem; color: var(--palette-soft-blush); line-height: 1.7;'
+    style: 'margin-bottom: 20px; padding-left: 20px; font-size: 0.84rem; color: var(--ink-body); line-height: 1.7;'
   });
   explainList.innerHTML = `
     <li>All forensic event records, SHA-256 lineage proofs, and unmapped fields will be deleted.</li>

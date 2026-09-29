@@ -1,5 +1,8 @@
 # LogForge — Universal Security Log Pre-processing & Normalization Framework (ULPF)
 
+> **Smart India Hackathon 2026 Submission** | **Problem Statement:** PS 26156 (NTRO) | **Team:** Team Hacked | **License:** [MIT License](LICENSE)
+
+
 [![Python](https://img.shields.io/badge/Python-3.12%2B-blue.svg)](https://python.org)
 [![OCSF](https://img.shields.io/badge/Schema-OCSF%201.4.0-green.svg)](https://schema.ocsf.io)
 [![Tests](https://img.shields.io/badge/Tests-135%20passed%20(100%25)-brightgreen.svg)]()
@@ -28,21 +31,44 @@
 
 ## Quickstart Guide
 
-### 1. Installation
+### 1. One-Click Windows Quickstart (Recommended)
 
-LogForge is managed via [uv](https://github.com/astral-sh/uv) or standard pip:
+LogForge includes dedicated PowerShell lifecycle scripts designed for evaluator and production convenience.
+
+#### First-Time Initialization (Run Once):
+```powershell
+# One-time setup: validates Python 3.12+, sets up isolated .venv, installs LogForge, and opens the Web UI
+.\boot-logforge.ps1
+```
+> **Note:** `boot-logforge.ps1` is a **one-time setup operation**. A Windows reboot or closing the terminal does **not** require booting again.
+
+#### Normal Everyday Launch:
+```powershell
+# Normal launcher: instant startup, opens the Web UI, zero reinstalling/dependency overhead
+.\run-logforge.ps1
+```
+
+#### Custom Port Support:
+```powershell
+# Launch on an alternate port if 8000 is occupied
+.\run-logforge.ps1 -Port 8080
+```
+
+---
+
+### 2. Manual Cross-Platform Installation
+
+If you prefer manual setup using [uv](https://github.com/astral-sh/uv) or standard Python virtual environments:
 
 ```bash
 # Clone and enter the repository
 cd logforge
 
-# Sync dependencies and install logforge CLI in editable mode
+# Using uv (Recommended for speed):
 uv sync
 uv pip install -e .
-```
 
-Alternatively, with standard Python:
-```bash
+# Or using standard Python:
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install -e .
@@ -114,18 +140,19 @@ To evaluate core pipeline normalization throughput independently of storage subs
 
 ### Benchmark Environment & Hardware Specifications
 
-The official benchmark results were measured on the following system:
+The benchmark results were empirically verified on the following hardware platform:
 
-- **System Model:** Lenovo LOQ
-- **CPU:** AMD Ryzen 7 7435HS (8 cores / 16 threads)
-- **System Memory:** 24 GB DDR5
-- **Operating System:** Windows 11 Home Single Language 64-bit
-- **Python:** 3.12.10
-- **Workload:** 100,000-event syslog corpus
-- **Batch Size:** 100 events per IPC task
+- **System Model:** Lenovo LOQ (83JC)
+- **CPU:** AMD Ryzen 7 7435HS (8 physical cores, 16 logical threads, up to 4.5 GHz boost)
+- **Architecture:** x86-64 (AMD64 Family 25 Model 68 Stepping 1)
+- **System Memory (RAM):** 24.0 GB DDR5
+- **Operating System:** Microsoft Windows 11 Home Single Language (64-bit, Build 26200)
+- **Python Version:** Python 3.12.10 (CPython, 64-bit)
+- **Workload Corpus:** 100,000 events (`samples/syslog/benchmark_100k.log`)
 - **Workers Tested:** 1, 4, and 8
-- **Output:** In-memory / no-op connector
-- **IPC:** Python `ProcessPoolExecutor`
+- **IPC Mechanism:** Multiprocessing (`ProcessPoolExecutor`) with batched IPC chunking
+- **Batch Size:** 100 events per IPC task
+- **Output Connector:** In-memory / no-op connector (measures pipeline-only processing speed; excludes disk I/O latency)
 
 > **Performance Disclaimer:** These figures represent measured execution results under the specific test configuration described above. They do not constitute universal throughput guarantees. Real-world performance will vary depending on log event complexity, schema depth, storage I/O speeds, and host hardware.
 
